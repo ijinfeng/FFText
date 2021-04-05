@@ -22,7 +22,7 @@ pod 'FFText'
 
 ## Author
 
-CranzCapatain, jinfeng@yunjigobal.com
+jinfeng, 851406283@qq.com
 
 ## License
 
