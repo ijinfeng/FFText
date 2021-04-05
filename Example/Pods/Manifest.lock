@@ -1,0 +1,19 @@
+PODS:
+  - FFText (0.1.0)
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - FFText (from `../`)
+  - Masonry
+
+EXTERNAL SOURCES:
+  FFText:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FFText: 0189ea2950572c454fb74381bc4c05e7e2c31b08
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: dd1b977af2d24ed372d117986bd2c0506822d37a
+
+COCOAPODS: 1.2.1

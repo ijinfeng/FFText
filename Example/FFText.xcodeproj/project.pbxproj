@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		22B76526680D8DFD7F5AC601 /* Pods_FFText_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E83FB91B3D74C33FEB464E40 /* Pods_FFText_Example.framework */; };
+		37664AA1261A02460068A86A /* FFAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A8F261A02450068A86A /* FFAutoLayoutViewController.m */; };
+		37664AA2261A02460068A86A /* FFTextBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A92261A02450068A86A /* FFTextBaseViewController.m */; };
+		37664AA3261A02460068A86A /* FFRichTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A94261A02450068A86A /* FFRichTextViewController.m */; };
+		37664AA4261A02460068A86A /* FFTextHighlightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A95261A02450068A86A /* FFTextHighlightViewController.m */; };
+		37664AA5261A02460068A86A /* FFTruncationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A96261A02450068A86A /* FFTruncationViewController.m */; };
+		37664AA6261A02460068A86A /* FFImageTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A97261A02450068A86A /* FFImageTextViewController.m */; };
+		37664AA7261A02460068A86A /* FFTextVerticalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A9A261A02450068A86A /* FFTextVerticalViewController.m */; };
+		37664AA8261A02460068A86A /* FFExclusionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A9D261A02460068A86A /* FFExclusionViewController.m */; };
+		37664AA9261A02460068A86A /* FFAutoDetectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37664A9F261A02460068A86A /* FFAutoDetectViewController.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,9 +46,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CFD10B34DC718323D746E10 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		2CFD10B34DC718323D746E10 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		301AD6561A1E4EDE83855536 /* Pods-FFText_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFText_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFText_Tests/Pods-FFText_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5520C7392F67E1E0F06ADA4B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		37664A8F261A02450068A86A /* FFAutoLayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAutoLayoutViewController.m; sourceTree = "<group>"; };
+		37664A90261A02450068A86A /* FFTextBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextBaseViewController.h; sourceTree = "<group>"; };
+		37664A91261A02450068A86A /* FFTextVerticalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextVerticalViewController.h; sourceTree = "<group>"; };
+		37664A92261A02450068A86A /* FFTextBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextBaseViewController.m; sourceTree = "<group>"; };
+		37664A93261A02450068A86A /* FFRichTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFRichTextViewController.h; sourceTree = "<group>"; };
+		37664A94261A02450068A86A /* FFRichTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFRichTextViewController.m; sourceTree = "<group>"; };
+		37664A95261A02450068A86A /* FFTextHighlightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextHighlightViewController.m; sourceTree = "<group>"; };
+		37664A96261A02450068A86A /* FFTruncationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTruncationViewController.m; sourceTree = "<group>"; };
+		37664A97261A02450068A86A /* FFImageTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFImageTextViewController.m; sourceTree = "<group>"; };
+		37664A98261A02450068A86A /* FFTextHighlightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTextHighlightViewController.h; sourceTree = "<group>"; };
+		37664A99261A02450068A86A /* FFTruncationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFTruncationViewController.h; sourceTree = "<group>"; };
+		37664A9A261A02450068A86A /* FFTextVerticalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFTextVerticalViewController.m; sourceTree = "<group>"; };
+		37664A9B261A02460068A86A /* FFImageTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFImageTextViewController.h; sourceTree = "<group>"; };
+		37664A9C261A02460068A86A /* FFAutoLayoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAutoLayoutViewController.h; sourceTree = "<group>"; };
+		37664A9D261A02460068A86A /* FFExclusionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFExclusionViewController.m; sourceTree = "<group>"; };
+		37664A9E261A02460068A86A /* FFAutoDetectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFAutoDetectViewController.h; sourceTree = "<group>"; };
+		37664A9F261A02460068A86A /* FFAutoDetectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFAutoDetectViewController.m; sourceTree = "<group>"; };
+		37664AA0261A02460068A86A /* FFExclusionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFExclusionViewController.h; sourceTree = "<group>"; };
+		5520C7392F67E1E0F06ADA4B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* FFText_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FFText_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +89,7 @@
 		64332DAC77E456853E6FB5DC /* Pods-FFText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFText_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFText_Example/Pods-FFText_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B3F9FC588519ED937664A3A /* FFText.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FFText.podspec; path = ../FFText.podspec; sourceTree = "<group>"; };
+		9B3F9FC588519ED937664A3A /* FFText.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FFText.podspec; path = ../FFText.podspec; sourceTree = "<group>"; };
 		BDC8126570CF271EC9DD2590 /* Pods_FFText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EC61872BE6409D98FDF843 /* Pods-FFText_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFText_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FFText_Example/Pods-FFText_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		CA4749F4090BFA91DA47C547 /* Pods-FFText_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFText_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFText_Tests/Pods-FFText_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +164,24 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* FFViewController.h */,
 				6003F5A6195388D20070C39A /* FFViewController.m */,
+				37664A9E261A02460068A86A /* FFAutoDetectViewController.h */,
+				37664A9F261A02460068A86A /* FFAutoDetectViewController.m */,
+				37664A9C261A02460068A86A /* FFAutoLayoutViewController.h */,
+				37664A8F261A02450068A86A /* FFAutoLayoutViewController.m */,
+				37664AA0261A02460068A86A /* FFExclusionViewController.h */,
+				37664A9D261A02460068A86A /* FFExclusionViewController.m */,
+				37664A9B261A02460068A86A /* FFImageTextViewController.h */,
+				37664A97261A02450068A86A /* FFImageTextViewController.m */,
+				37664A93261A02450068A86A /* FFRichTextViewController.h */,
+				37664A94261A02450068A86A /* FFRichTextViewController.m */,
+				37664A90261A02450068A86A /* FFTextBaseViewController.h */,
+				37664A92261A02450068A86A /* FFTextBaseViewController.m */,
+				37664A98261A02450068A86A /* FFTextHighlightViewController.h */,
+				37664A95261A02450068A86A /* FFTextHighlightViewController.m */,
+				37664A91261A02450068A86A /* FFTextVerticalViewController.h */,
+				37664A9A261A02450068A86A /* FFTextVerticalViewController.m */,
+				37664A99261A02450068A86A /* FFTruncationViewController.h */,
+				37664A96261A02450068A86A /* FFTruncationViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -260,6 +305,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -394,8 +440,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37664AA9261A02460068A86A /* FFAutoDetectViewController.m in Sources */,
 				6003F59E195388D20070C39A /* FFAppDelegate.m in Sources */,
+				37664AA5261A02460068A86A /* FFTruncationViewController.m in Sources */,
+				37664AA4261A02460068A86A /* FFTextHighlightViewController.m in Sources */,
+				37664AA3261A02460068A86A /* FFRichTextViewController.m in Sources */,
+				37664AA1261A02460068A86A /* FFAutoLayoutViewController.m in Sources */,
+				37664AA7261A02460068A86A /* FFTextVerticalViewController.m in Sources */,
+				37664AA8261A02460068A86A /* FFExclusionViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* FFViewController.m in Sources */,
+				37664AA6261A02460068A86A /* FFImageTextViewController.m in Sources */,
+				37664AA2261A02460068A86A /* FFTextBaseViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +582,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFText/FFText-Prefix.pch";
 				INFOPLIST_FILE = "FFText/FFText-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,6 +599,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FFText/FFText-Prefix.pch";
 				INFOPLIST_FILE = "FFText/FFText-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
