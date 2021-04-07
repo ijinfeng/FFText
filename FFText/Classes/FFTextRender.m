@@ -49,12 +49,13 @@
     [self translateCTM];
     _renderText = _layout.attributeText.mutableCopy;
     
+    if (_frameRef) CFRelease(_frameRef);
+    if (_framesetterRef) CFRelease(_framesetterRef);
+    
     CTFramesetterRef framesetterRef = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_renderText);
     // 文字绘制区
     CGMutablePathRef pathRef = [_layout createRenderPathIgnoreExclusionPaths:NO];
     CTFrameRef frameRef = CTFramesetterCreateFrame(framesetterRef, CFRangeMake(0, _renderText.length), pathRef, NULL);
-    if (_frameRef) CFRelease(_frameRef);
-    if (_framesetterRef) CFRelease(_framesetterRef);
     _frameRef = frameRef;
     _framesetterRef = framesetterRef;
     CFRelease(pathRef);
@@ -129,8 +130,12 @@
         CTLineRef lineRef = CFArrayGetValueAtIndex(linesRef, i);
         FFLine *line = [FFLine line:lineRef inRenderFrame:_frameRef originPoint:origins[i] atRow:i];
         NSUInteger currentTextLength = line.range.location + line.range.length;
+        BOOL needShowTruncation = currentTextLength < textLength;
         // 最后一行，没到总字数，并且有自定义的截断符
-        if (i == count - 1 && currentTextLength < textLength && truncationTokenText) {
+        // 截断在使用自动布局的模糊边距时会有问题，这里要注意，比如lessthen... grearthan
+        // 如果使用约束，那么直接设置固定约束，equalTo
+        // TODO:jinfeng fix 约束布局时的截断判断问题，主要是因为约束布局导致的size不准导致文本长度不对引起的
+        if (i == count - 1 && needShowTruncation && truncationTokenText) {
             NSMutableAttributedString *drawLineString = [[NSMutableAttributedString alloc] initWithAttributedString:[_renderText attributedSubstringFromRange:line.range]];
             CTLineTruncationType type = kCTLineTruncationEnd;
             NSRange tokenRange = {};
@@ -304,6 +309,10 @@
 
 - (CGSize)textRenderSuggestSizeFits:(CGSize)size {
     _renderText = _layout.attributeText.mutableCopy;
+    
+    if (_frameRef) CFRelease(_frameRef);
+    if (_framesetterRef) CFRelease(_framesetterRef);
+    
     CTFramesetterRef framesetterRef = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)_renderText);
     // 文字绘制区
     CGMutablePathRef pathRef = [_layout createRenderPathIgnoreExclusionPaths:NO];

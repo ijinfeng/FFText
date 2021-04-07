@@ -62,6 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 点击富文本的代理，如点击事件，高亮事件
 @property (nonatomic, weak, nullable) id<FFTextAttributeDelegate> delegate;
 
+/// 默认为0，一般情况下是不需要设置的，但是在tableView的cell中使用时会出现问题，需要设置一个约束宽度来修正
+@property (nonatomic) CGFloat suggestConstraintWidth;
+
 @end
 
 @interface FFLabel (RichText)

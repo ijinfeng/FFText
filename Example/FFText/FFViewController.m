@@ -15,6 +15,7 @@
 #import "FFAutoLayoutViewController.h"
 #import "FFTruncationViewController.h"
 #import "FFTextVerticalViewController.h"
+#import "FFTextListViewController.h"
 
 @interface FFViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -29,7 +30,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.datas = @[@"富文本", @"图文排布", @"点击高亮", @"自动识别号码、URL", @"排空区域", @"AutoLayout", @"自定义截断", @"垂直布局"];
+    self.datas = @[@"富文本", @"图文排布", @"点击高亮", @"自动识别号码、URL", @"排空区域", @"AutoLayout", @"自定义截断", @"垂直布局", @"列表使用"];
 
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -94,6 +95,11 @@
         case 7:
         {
             vc = [FFTextVerticalViewController new];
+        }
+            break;
+        case 8:
+        {
+            vc = [FFTextListViewController new];
         }
             break;
         default:

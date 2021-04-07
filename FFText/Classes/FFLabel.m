@@ -21,6 +21,7 @@ static float const kMinimumLongPressDuration = 0.5;
     FFTextHighlight *_currentHighlightAction;
     NSTimer *_longGestureTimer;
     BOOL _startRender; // 控制是否渲染
+    BOOL _useAutoLayoutSize; // 使用约束布局
     FFTextDetector *_detector;
 }
 
@@ -60,6 +61,8 @@ static float const kMinimumLongPressDuration = 0.5;
     _detectorTypes = FFTextDetectorTypeNone;
     _detector = [FFTextDetector new];
     _detector.detectorTypes = _detectorTypes;
+    _suggestConstraintWidth = 0;
+    _useAutoLayoutSize = NO;
 }
 
 - (UIColor *)defaultTextColor {
@@ -72,7 +75,13 @@ static float const kMinimumLongPressDuration = 0.5;
 
 - (NSMutableAttributedString *)defaultAttributeText:(NSString *_Nullable)text {
     NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text == nil ? @"" : text];
-    [string ff_setLineBreakMode:_lineBreakMode];
+    NSLineBreakMode _lbk = _lineBreakMode;
+    if (_lbk == NSLineBreakByTruncatingHead ||
+        _lbk == NSLineBreakByTruncatingMiddle ||
+        _lbk == NSLineBreakByTruncatingTail) {
+        _lbk = NSLineBreakByWordWrapping;
+    }
+    [string ff_setLineBreakMode:_lbk];
     return string;
 }
 
@@ -130,23 +139,35 @@ static float const kMinimumLongPressDuration = 0.5;
 }
 
 - (CGSize)intrinsicContentSize {
-    CGSize contentSize = self.bounds.size;
-    if (contentSize.width <= 0) {
-        contentSize.width = CGFLOAT_MAX;
+    // TODO:jinfeng fix 使用AutoLayout的模糊约束会导致size计算不准，并且在tableView中使用会导致高度返回不正确，必须要设置‘suggestConstraintWidth’才行
+    _useAutoLayoutSize = YES;
+    
+    CGSize constraintSize = self.bounds.size;
+    
+    if (self.suggestConstraintWidth > 0) {
+        constraintSize.width = self.suggestConstraintWidth;
+    }
+
+    if (constraintSize.width <= 0) {
+        constraintSize.width = CGFLOAT_MAX;
         _startRender = NO;
     }
-    if (contentSize.height <= 0) {
-        contentSize.height = CGFLOAT_MAX;
+    if (constraintSize.height <= 0) {
+        constraintSize.height = CGFLOAT_MAX;
         _startRender = NO;
-    } else if (contentSize.height == _render.suggestSize.height) {
-        contentSize.height = CGFLOAT_MAX;
-        _startRender = YES;
-    } else {
+    }
+    
+    if (constraintSize.width > 0 && constraintSize.width != CGFLOAT_MAX) {
+        // 说明有正确的约束宽度了
+        constraintSize.height = CGFLOAT_MAX;
         _startRender = YES;
     }
+    
     // 第一次计算的宽度是准确的
-    _render.layout.size = contentSize;
-    CGSize suggestSize = [_render textRenderSuggestSizeFits:contentSize];
+    _render.layout.size = constraintSize;
+//    NSLog(@"=size constraint:%@",NSStringFromCGSize(constraintSize));
+    CGSize suggestSize = [_render textRenderSuggestSizeFits:constraintSize];
+//    NSLog(@"=size suggest:%@",NSStringFromCGSize(suggestSize));
     if (_startRender) {
         [self setNeedsRender];
     }
@@ -164,8 +185,13 @@ static float const kMinimumLongPressDuration = 0.5;
     [_renderText ff_setFont:_font ? _font : [self defaultFont]];
     [_renderText ff_setTextColor:_textColor ? _textColor : [self defaultTextColor]];
     [_renderText ff_setTextAlignment:_textAlignment];
-    [_renderText ff_setLineBreakMode:_lineBreakMode];
-    _truncationToken = nil;
+    NSLineBreakMode _lbk = _lineBreakMode;
+    if (_lbk == NSLineBreakByTruncatingHead ||
+        _lbk == NSLineBreakByTruncatingMiddle ||
+        _lbk == NSLineBreakByTruncatingTail) {
+        _lbk = NSLineBreakByWordWrapping;
+    }
+    [_renderText ff_setLineBreakMode:_lbk];
     [self setNeedsRender];
     [self invalidateIntrinsicContentSize];
 }
@@ -179,7 +205,6 @@ static float const kMinimumLongPressDuration = 0.5;
     _font = attributeText.ff_font;
     _textColor = attributeText.ff_textColor;
     _lineBreakMode = attributeText.ff_lineBreakMode;
-    _truncationToken = nil;
     [self setNeedsRender];
     [self invalidateIntrinsicContentSize];
 }
@@ -342,6 +367,13 @@ static float const kMinimumLongPressDuration = 0.5;
     if ([_detectorRegulars isEqualToArray:detectorRegulars] || _detectorRegulars == detectorRegulars) return;
     _detectorRegulars = detectorRegulars;
     _detector.detectorRegulars = detectorRegulars;
+    [self setNeedsRender];
+    [self invalidateIntrinsicContentSize];
+}
+
+- (void)setSuggestConstraintWidth:(CGFloat)suggestConstraintWidth {
+    if (_suggestConstraintWidth == suggestConstraintWidth) return;
+    _suggestConstraintWidth = suggestConstraintWidth;
     [self setNeedsRender];
     [self invalidateIntrinsicContentSize];
 }

@@ -32,6 +32,8 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		69660B2F11C39E7B3701D95A /* Pods_FFText_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC8126570CF271EC9DD2590 /* Pods_FFText_Tests.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		78A9AB8D261C09B600CD17C3 /* FFTextListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9AB8C261C09B600CD17C3 /* FFTextListViewController.m */; };
+		78A9AB91261C0D3A00CD17C3 /* list.json in Resources */ = {isa = PBXBuildFile; fileRef = 78A9AB90261C0D3A00CD17C3 /* list.json */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +90,9 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		64332DAC77E456853E6FB5DC /* Pods-FFText_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FFText_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FFText_Example/Pods-FFText_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78A9AB8B261C09B600CD17C3 /* FFTextListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFTextListViewController.h; sourceTree = "<group>"; };
+		78A9AB8C261C09B600CD17C3 /* FFTextListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFTextListViewController.m; sourceTree = "<group>"; };
+		78A9AB90261C0D3A00CD17C3 /* list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = list.json; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B3F9FC588519ED937664A3A /* FFText.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FFText.podspec; path = ../FFText.podspec; sourceTree = "<group>"; };
 		BDC8126570CF271EC9DD2590 /* Pods_FFText_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FFText_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,9 +184,12 @@
 				37664A98261A02450068A86A /* FFTextHighlightViewController.h */,
 				37664A95261A02450068A86A /* FFTextHighlightViewController.m */,
 				37664A91261A02450068A86A /* FFTextVerticalViewController.h */,
+				78A9AB90261C0D3A00CD17C3 /* list.json */,
 				37664A9A261A02450068A86A /* FFTextVerticalViewController.m */,
 				37664A99261A02450068A86A /* FFTruncationViewController.h */,
 				37664A96261A02450068A86A /* FFTruncationViewController.m */,
+				78A9AB8B261C09B600CD17C3 /* FFTextListViewController.h */,
+				78A9AB8C261C09B600CD17C3 /* FFTextListViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -325,6 +333,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				78A9AB91261C0D3A00CD17C3 /* list.json in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +415,7 @@
 				37664AA9261A02460068A86A /* FFAutoDetectViewController.m in Sources */,
 				6003F59E195388D20070C39A /* FFAppDelegate.m in Sources */,
 				37664AA5261A02460068A86A /* FFTruncationViewController.m in Sources */,
+				78A9AB8D261C09B600CD17C3 /* FFTextListViewController.m in Sources */,
 				37664AA4261A02460068A86A /* FFTextHighlightViewController.m in Sources */,
 				37664AA3261A02460068A86A /* FFRichTextViewController.m in Sources */,
 				37664AA1261A02460068A86A /* FFAutoLayoutViewController.m in Sources */,

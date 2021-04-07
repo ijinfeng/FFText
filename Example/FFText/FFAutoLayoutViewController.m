@@ -13,6 +13,13 @@
 @property (nonatomic, strong) FFLabel *label1;
 @property (nonatomic, strong) FFLabel *label2;
 @property (nonatomic, strong) FFLabel *label3;
+
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, strong) FFLabel *label4;
+@property (nonatomic, strong) FFLabel *label5;
+
+@property (nonatomic, strong) FFLabel *label6;
+
 @end
 
 @implementation FFAutoLayoutViewController
@@ -58,6 +65,54 @@
     [self.label3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.label2.mas_bottom).offset(10);
         make.left.right.inset(12);
+    }];
+    
+    self.containerView = [[UIView alloc] init];
+    self.containerView.layer.borderWidth = 2;
+    self.containerView.layer.borderColor = [UIColor greenColor].CGColor;
+    [self.view addSubview:self.containerView];
+    
+    self.label4 = [FFLabel new];
+    self.label4.text = @"一段段文字";
+    self.label4.layer.borderColor = [UIColor redColor].CGColor;
+    self.label4.layer.borderWidth = 1;
+    [self.view addSubview:self.label4];
+    
+    self.label5 = [FFLabel new];
+    self.label5.text = @"一段段文字 一段段文字 一段段文字 一段段文字 一段段文字 一段段文字 一段段文字 一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字一段段文字";
+    self.label5.numberOfLines = 2;
+    self.label5.layer.borderColor = [UIColor redColor].CGColor;
+    self.label5.layer.borderWidth = 1;
+    [self.view addSubview:self.label5];
+    
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.top.equalTo(self.label3.mas_bottom).offset(10);
+        make.right.lessThanOrEqualTo(@(-12));
+    }];
+    
+    [self.label4 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(self.containerView).offset(5);
+        make.right.equalTo(self.containerView).mas_equalTo(-5);
+    }];
+    
+    [self.label5 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.label4.mas_bottom).offset(10);
+        make.right.bottom.equalTo(self.containerView).offset(-5);
+        make.left.equalTo(self.containerView).offset(5);
+    }];
+    
+    self.label6 = [FFLabel new];
+    self.label6.text = @"一段段文字 一段段文字";
+
+    self.label6.layer.borderColor = [UIColor redColor].CGColor;
+    self.label6.layer.borderWidth = 1;
+    [self.view addSubview:self.label6];
+    
+    [self.label6 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(12);
+        make.right.mas_lessThanOrEqualTo(-12);
+        make.top.equalTo(self.label5.mas_bottom).offset(10);
     }];
     
     

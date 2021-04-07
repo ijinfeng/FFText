@@ -11,12 +11,6 @@ Pod::Spec.new do |s|
   s.version          = '0.1.1'
   s.summary          = '富文本控件'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 简单易用，支持多种功能的富文本显示控件。支持如下功能：
 1、基础富文本显示
@@ -29,21 +23,11 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/ijinfeng/FFText'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jinfeng' => '851406283@qq.com' }
   s.source           = { :git => 'https://github.com/ijinfeng/FFText.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'FFText/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'FFText' => ['FFText/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
