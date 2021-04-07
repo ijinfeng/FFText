@@ -20,6 +20,12 @@ it, simply add the following line to your Podfile:
 pod 'FFText'
 ```
 
+## Feature
+
+* 模糊约束支持
+* 长按选则文本内容
+* 异步渲染
+
 ## Author
 
 jinfeng, 851406283@qq.com
