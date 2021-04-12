@@ -9,7 +9,17 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Use
+
+|功能|示例|效果
+|---|---|---
+|富文本|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFRichTextViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/fuwenben.png)
+|图文|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFImageTextViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/tuwen.gif)
+|高亮|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFTextHighlightViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/highlight.gif)
+|自定义截断|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFTruncationViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/customTruncation.gif)
+|排空区域|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFExclusionViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/exclusionPath.png)
+|垂直布局|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFTextVerticalViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/vertical.png)
+|自动识别号码及自定义识别规则|[跳转](https://github.com/ijinfeng/FFText/blob/master/Example/FFText/FFAutoDetectViewController.m)|![](https://github.com/ijinfeng/FFText/blob/master/desc/autoDetector.gif)
 
 ## Installation
 
